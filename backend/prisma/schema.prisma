@@ -7,11 +7,11 @@ datasource db {
 }
 
 model users {
-  id                                        BigInt     @id @default(autoincrement())
-  username                                  String?    @db.VarChar(160)
-  email                                     String     @db.VarChar(160)
-  password                                  String     @db.VarChar(250)
-  status                                    estatus    @default(ACTIVE)
+  id                                        BigInt    @id @default(autoincrement())
+  username                                  String?   @db.VarChar(160)
+  email                                     String    @db.VarChar(160)
+  password                                  String    @db.VarChar(250)
+  status                                    estatus   @default(ACTIVE)
 }
 
 model answers {
