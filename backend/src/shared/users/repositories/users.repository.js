@@ -16,3 +16,8 @@ async function createUser(data) {
         data
     });
 }
+
+export {
+    findByUserName,
+    createUser
+}
