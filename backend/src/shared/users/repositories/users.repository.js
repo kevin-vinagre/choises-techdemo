@@ -42,8 +42,29 @@ async function createUser(data) {
     });
 }
 
+async function validateByEmail(email) {
+    const user = prisma.users.findUnique({
+        where: {
+            email
+        }
+    });
+
+    return !!user;
+}
+async function validateByUsername(username) {
+    const user = prisma.users.findUnique({
+        where: {
+            username
+        }
+    });
+
+    return !!user;
+}
+
 export {
     listUsers,
     validateUser,
-    createUser
+    createUser,
+    validateByEmail,
+    validateByUsername
 }
