@@ -1,4 +1,4 @@
-import bcryp from 'bcrypt.js'
+import bcrypt from 'bcrypt.js'
 import { validateByEmail, validateByUsername, createUser } from '../../shared/users/repositories/users.repository'
 
 
