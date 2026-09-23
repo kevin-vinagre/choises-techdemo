@@ -19,7 +19,7 @@ function signUpUser(username, email, password) {
         throw error;
     }
     try {
-        const user = prisma.createUser({
+        const user = await createUser({
             username,
             email,
             password: hashedPassword
