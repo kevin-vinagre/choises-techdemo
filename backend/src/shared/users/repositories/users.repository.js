@@ -42,6 +42,9 @@ async function createUser(data) {
     });
 }
 
+/**
+ *Validar se o email ja existe
+ */
 async function validateByEmail(email) {
     const user = prisma.users.findUnique({
         where: {
@@ -51,6 +54,10 @@ async function validateByEmail(email) {
 
     return !!user;
 }
+
+/**
+ *Validar se o Nome de usuario ja existe
+ */
 async function validateByUsername(username) {
     const user = prisma.users.findUnique({
         where: {
