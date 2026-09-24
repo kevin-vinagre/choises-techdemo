@@ -1,4 +1,5 @@
 import express from "express";
+import signUpUser from "./features/signup/signup.service.js";
 
 const app = express();
 
@@ -28,6 +29,12 @@ app.post("/signin", (req, res) => {
         "username": username,
         "password": password
     });
+});
+
+app.post("/signup", async (req, res) => {
+    const { username, email, password } = req.body;
+    const user = await signUpUser(username, email, password);
+    res.status(201).json(user);
 });
 
 app.listen(PORT, () => {
