@@ -18,7 +18,7 @@ async function listUsers() {
  * validar por usuario e senha
  */
 async function validateUser(username, password) {
-    const user = prisma.users.findFirst({
+    const user = prisma.users.findUnique({
         where: {
             username,
             password
