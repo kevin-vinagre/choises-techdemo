@@ -19,6 +19,7 @@ function signUpUser(username, email, password) {
         throw error;
     }
     try {
+        const hashedPassword = await bcrypt.hash(password, 10);
         const user = await createUser({
             username,
             email,
