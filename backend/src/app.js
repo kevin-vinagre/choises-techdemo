@@ -32,9 +32,15 @@ app.post("/signin", (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
-    const { username, email, password } = req.body;
-    const user = await signUpUser(username, email, password);
-    res.status(201).json(user);
+
+    try {
+        const { username, email, password } = req.body;
+        const user = await signUpUser(username, email, password);
+        res.status(201).json(user);
+    }
+    catch (error) {
+        res.status(502).json({ mensagem: error.message });
+    }
 });
 
 app.listen(PORT, () => {

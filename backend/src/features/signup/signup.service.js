@@ -23,7 +23,7 @@ async function signUpUser(username, email, password) {
             email,
             password
         });
-        return user;
+        return { ...user, id: user.id.toString() };
     } catch (issue) {
         const error = new Error("Falha ao comunicar com banco de dados");
         error.statusCode = 509;

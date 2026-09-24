@@ -18,7 +18,7 @@ async function listUsers() {
  * validar por usuario e senha
  */
 async function validateUser(username, password) {
-    const user = prisma.users.findUnique({
+    const user = await prisma.users.findFirst({
         where: {
             username,
             password
@@ -46,7 +46,7 @@ async function createUser(data) {
  *Validar se o email ja existe
  */
 async function validateByEmail(email) {
-    const user = prisma.users.findUnique({
+    const user = await prisma.users.findFirst({
         where: {
             email
         }
@@ -59,7 +59,7 @@ async function validateByEmail(email) {
  *Validar se o Nome de usuario ja existe
  */
 async function validateByUsername(username) {
-    const user = prisma.users.findUnique({
+    const user = await prisma.users.findFirst({
         where: {
             username
         }
