@@ -1,4 +1,4 @@
-import signUpUser from "./signup.service";
+import signUpUser from "./signup.service.js";
 
 async function signupController(req, res) {
     try {
