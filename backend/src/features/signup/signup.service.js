@@ -1,3 +1,4 @@
+import bcrypt from 'bcrypt'
 import { validateByEmail, validateByUsername, createUser } from '../../shared/users/repositories/users.repository.js'
 
 
@@ -18,10 +19,11 @@ async function signUpUser(username, email, password) {
         throw error;
     }
     try {
+        const hashpassword = await bcrypt.hash(password, 10);
         const user = await createUser({
             username,
             email,
-            password
+            password: hashpassword
         });
         return { ...user, id: user.id.toString() };
     } catch (issue) {
