@@ -12,4 +12,4 @@ async function signupController(req, res) {
 
 }
 
-export default signupController;
+export default signupController
