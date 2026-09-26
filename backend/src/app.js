@@ -1,5 +1,4 @@
 import express from "express";
-import signUpUser from "./features/signup/signup.service.js";
 import signUpRouter from "./features/signup/signup.route.js";
 
 const app = express();

@@ -7,7 +7,10 @@ async function signupController(req, res) {
         res.status(201).json(user);
     }
     catch (error) {
-        res.status(502).json({ mensagem: error.message });
+        res.status(error.statusCode || 500).json({
+            mensagem: error.message ||
+                'erro interno do serviço: ' + error.message
+        });
     }
 
 }
