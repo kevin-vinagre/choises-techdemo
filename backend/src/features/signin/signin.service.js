@@ -16,9 +16,12 @@ async function signIn(email, password) {
         error.statusCode = 409;
         throw error;
     }
+
+    const { password: _, ...safeUser } = user;
+
     try {
-        const token = generateToken(user)
-        return { token, user }
+        const token = generateToken(user);
+        return { token, user: safeUser }
     } catch (issue) {
         const error = new Error("Erro Interno: " + issue.message);
         error.statusCode = 500;

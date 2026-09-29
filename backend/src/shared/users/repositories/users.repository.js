@@ -63,11 +63,12 @@ async function validateByEmail(email) {
  * -Kevin da Costa Vinagre
  */
 async function findByEmail(email) {
-    return await prisma.users.findFirst({
+    const user = await prisma.users.findFirst({
         where: {
             email
         }
     });
+    return { ...user, id: user.id.toString() };
 }
 
 /**

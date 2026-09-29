@@ -9,7 +9,7 @@ async function signInController(req, res) {
         return res.status(error.statusCode).json({ message: error.message });
     }
     try {
-        const token = signIn(email, password);
+        const token = await signIn(email, password);
         if (!token) {
             const error = new Error("Erro ao gerar token");
             error.statusCode = 500;
