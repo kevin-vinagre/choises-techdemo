@@ -1,6 +1,7 @@
 import express from "express";
 import signUpRouter from "./features/signup/signup.route.js";
 import signInRouter from "./features/signin/signin.route.js";
+import authMiddleWare from "./core/security/auth.middleware.js";
 
 const app = express();
 
@@ -8,9 +9,12 @@ const PORT = 8081;
 
 app.use(express.json());
 
-//Rotas das funcionalidades
-app.use('/signup', signUpRouter);
+//Rotas publicas
+app.use('/signup', authMiddleWare, signUpRouter);
 app.use('/signin', signInRouter);
+
+//Rotas privadas
+
 
 app.listen(PORT, () => {
     console.log(`servidor iniciado em http://localhost:${PORT}`);
