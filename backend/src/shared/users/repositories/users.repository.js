@@ -56,6 +56,21 @@ async function validateByEmail(email) {
 }
 
 /**
+ * Função para recuperar dados do usuario pelo email 
+ * Ultimo contribuidor: Kevin da Costa Vinagre
+ * Ultima edição: 28/09/2026-20:38
+ * Contribuidores:
+ * -Kevin da Costa Vinagre
+ */
+async function findByEmail(email) {
+    return await prisma.users.findFirst({
+        where: {
+            email
+        }
+    });
+}
+
+/**
  *Validar se o Nome de usuario ja existe
  */
 async function validateByUsername(username) {
@@ -73,5 +88,6 @@ export {
     validateUser,
     createUser,
     validateByEmail,
-    validateByUsername
+    validateByUsername,
+    findByEmail
 }
