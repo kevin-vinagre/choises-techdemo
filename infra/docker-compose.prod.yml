@@ -10,8 +10,8 @@ services:
     ports:
       - "8081:8081"
     environment:
-      NODE_ENV: production
-      PORT: 8081
+      NODE_ENV: ${NODE_ENV}
+      PORT: ${PORT}
       DATABASE_URL: ${DATABASE_URL}
       JWT_SECRET: ${JWT_SECRET}
     networks:
