@@ -1,6 +1,5 @@
 version: "3.9"
 
-
 services:
   backend:
     build:
@@ -9,13 +8,12 @@ services:
     container_name: choises-backend
     restart: unless-stopped
     ports:
-      -"8081"
+      - "8081:8081"
     environment:
       NODE_ENV: production
       PORT: 8081
-      DATABASE_URL: ${ DATABASE_URL }
-      JWT_SECRET: ${ JWT_SECRET }
-    command: sh -c "npx prisma migrate deploy && node ./src/app.js"
+      DATABASE_URL: ${DATABASE_URL}
+      JWT_SECRET: ${JWT_SECRET}
     networks:
       - app-network
 
