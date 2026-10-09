@@ -3,17 +3,17 @@ import { View } from "react-native";
 import Navbar from "../../../components/Navbar.component";
 import SignUpForm from "../../../components/SignUpForm.component";
 
-function HomePage() {
+function HomePage({ navigation }) {
     return (
         <View>
             <Navbar
                 itens={[
-                    { label: "HOME", link: "http://localhost" },
-                    { label: "google", link: "https://google.com" },
-                    { label: "github", link: "https://github.com" },
+                    { label: "HOME", pageName: "Home" },
+                    { label: "Sign In", pageName: "SignIn" },
+                    { label: "Sign UP", pageName: "SignUp" },
                 ]}
+                navigation={navigation}
             />
-            <SignUpForm></SignUpForm>
         </View>
     );
 }

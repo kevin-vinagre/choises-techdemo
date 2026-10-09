@@ -1,14 +1,14 @@
 import React from "react";
 import { View, Text, StyleSheet, Pressable, Linking } from "react-native";
 
-function Navbar({ itens }) {
+function Navbar({ itens, navigation }) {
     return (
         <View style={styles.container}>
             {
                 itens.map((item, index) => (
                     <Pressable
                         key={index}
-                        onPress={() => { Linking.openURL(item.link) }}
+                        onPress={() => { navigation.navigate(item.pageName) }}
                         style={styles.linkbox}>
                         <Text style={styles.linktext}>{item.label}</Text>
                     </Pressable>
