@@ -7,6 +7,7 @@ function HomePage({ navigation }) {
     return (
         <View>
             <Navbar
+                logoImg={require("../../../../assets/logo.png")}
                 itens={[
                     { label: "HOME", pageName: "Home" },
                     { label: "Sign In", pageName: "SignIn" },

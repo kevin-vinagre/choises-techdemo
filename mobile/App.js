@@ -14,7 +14,8 @@ export default function App() {
     <GestureHandlerRootView style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Home">
+          initialRouteName="Home"
+          screenOptions={{ headerShown: false }} >
           <Stack.Screen name="Home" component={HomePage} />
           <Stack.Screen name="SignUp" component={SignUpPage} />
           <Stack.Screen name="SignIn" component={SignInPage} />
