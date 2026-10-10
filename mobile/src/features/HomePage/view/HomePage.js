@@ -2,17 +2,13 @@ import React from "react";
 import { View } from "react-native";
 import Navbar from "../../../components/Navbar.component";
 import SignUpForm from "../../../components/SignUpForm.component";
-
+import { MenuComponents } from "../../../data/MenuComponents";
 function HomePage({ navigation }) {
     return (
         <View>
             <Navbar
-                logoImg={require("../../../../assets/logo.png")}
-                itens={[
-                    { label: "HOME", pageName: "Home" },
-                    { label: "Sign In", pageName: "SignIn" },
-                    { label: "Sign UP", pageName: "SignUp" },
-                ]}
+                logoImg={MenuComponents["naologado"].logoImg}
+                itens={MenuComponents["naologado"].itens}
                 navigation={navigation}
             />
         </View>
